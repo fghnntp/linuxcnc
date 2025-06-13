@@ -1,0 +1,13 @@
+Todolist
+1. Background transefer function needed.
+2. Service support NC Upload function.
+3. Service support Simulation Download function.
+4. Service support CTRL ResetAPI
+5. Service support status subsription
+6. Service suppport multi simulation
+
+A standart using exmaple:
+1.Prepare NC and upload it.
+2.Run simulation request.
+3.Subscript the simulation finish state.
+4.Download the simulation file.

@@ -1154,6 +1154,7 @@ int Posix::task_self() {
 }
 
 void Posix::wait() {
+    return;
     if(do_thread_lock)
         pthread_mutex_unlock(&thread_lock);
     pthread_testcancel();

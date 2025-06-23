@@ -13,7 +13,7 @@ class SimResManager:
     def __init__(self, base_dir: str = "./sim_results"):
         self.base_dir = base_dir
         os.makedirs(self.base_dir, exist_ok=True)
-        self.r = redis.Redis(host='10.10.30.19', port=6379, db=0)
+        self.r = redis.Redis(host='0.0.0.0', port=6379, db=0)
         self.catch_lock = threading.Lock()
         self.save_lock = threading.Lock()
         self.raw_lines = []

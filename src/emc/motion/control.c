@@ -2181,3 +2181,36 @@ static void update_status(void)
     }
 #endif
 }
+
+struct emcmot_status_t *GetEMCMotStatus(void)
+{
+    /* This function is used to get the emcmotStatus struct
+       from the kernel module.  It is used by the test
+       program, and should not be used by any other code.
+       It is not exported, so it cannot be called from user space.
+       It is only here to allow the test program to compile.
+    */
+    return emcmotStatus;
+}
+
+struct emcmot_config_t* GetEMCMotConfig(void)
+{
+    return emcmotConfig;
+}
+
+emcmot_joint_t *GetEMCMotJoints(void)
+{
+    return joints;
+}
+
+void BlkForward(const double * joints,
+                      EmcPose * pos)
+{
+    kinematicsForward(joints, pos, &fflags, &iflags);
+}
+
+
+EXPORT_SYMBOL(GetEMCMotStatus);
+EXPORT_SYMBOL(GetEMCMotConfig);
+EXPORT_SYMBOL(GetEMCMotJoints);
+EXPORT_SYMBOL(BlkForward);

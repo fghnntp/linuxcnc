@@ -758,7 +758,13 @@ typedef struct emcmot_internal_t {
     extern int emcmotErrorGet(emcmot_error_t * errlog, char *error);
 
 #define GET_JOINT_ACTIVE_FLAG(joint) ((joint)->flag & EMCMOT_JOINT_ACTIVE_BIT ? 1 : 0)
-#define GET_JOINT_INPOS_FLAG(joint) ((joint)->flag & EMCMOT_JOINT_INPOS_BIT ? 1 : 0)
+#define GET_JOINT_INPOS_FLAG(joint) ((joint)->flag & EMCMOT_JOINT_INPOS_BIT ? 1 : 0
+
+	struct emcmot_status_t* GetEMCMotStatus(void);
+	struct emcmot_config_t* GetEMCMotConfig(void);
+	emcmot_joint_t *GetEMCMotJoints(void);
+	void BlkForward(const double * joints,
+						EmcPose * pos);
 
 #ifdef __cplusplus
 }

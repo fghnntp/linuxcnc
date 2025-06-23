@@ -88,7 +88,7 @@ void GatherSender::InitRedis()
     try {
         // Redis连接配置，根据实际情况修改
         ConnectionOptions connection_options;
-        connection_options.host = "10.10.30.19";
+        connection_options.host = "0.0.0.0";
         connection_options.port = 6379;
         connection_options.socket_timeout = std::chrono::milliseconds(100);
         
